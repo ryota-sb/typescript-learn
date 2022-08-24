@@ -1,5 +1,20 @@
-import axios from "axios";
+// Enum 列挙型
 
-function add(a: number, b: number): number {
-  return a + b;
+enum CoffeeSize {
+  SHORT = "SHORT",
+  TALL = "TALL",
+  GRANDE = "GRANDE",
+  VENTI = "VENTI",
 }
+
+const coffee = {
+  hot: true,
+  size: CoffeeSize.TALL,
+};
+
+coffee.size = CoffeeSize.SHORT;
+
+// Union型
+
+let unionType: number | string = 10;
+let unionTypes: (number | string)[] = ["Hello", 1000];
