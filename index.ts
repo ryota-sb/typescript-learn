@@ -73,3 +73,27 @@ function error(message: string): never {
   throw new Error(message);
 }
 console.log(error("This is an error"));
+
+// インターセクション型 （AかつB）
+
+type Engineer = {
+  name: string;
+  role: string;
+};
+
+type Blogger = {
+  name: string;
+  follower: number;
+};
+
+type EnginnerBlogger = Engineer & Blogger;
+
+const quill: EnginnerBlogger = {
+  name: "quill",
+  role: "frontend",
+  follower: 10000,
+};
+
+type NumberBooleanString = number | boolean | string;
+type StringNumber = string | number;
+type Mix = NumberBooleanString & StringNumber;
