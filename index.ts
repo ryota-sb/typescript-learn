@@ -30,3 +30,30 @@ let size: "Small" | "Medium" | "Large" = "Small";
 
 type ClothSize = "Small" | "Medium" | "Large";
 let clothSize: ClothSize = "Large";
+
+// 関数
+
+function add(num1: number, num2: number): number {
+  return num1 + num2;
+}
+
+// void (戻り値なし)
+
+function sayHello(): void {
+  console.log("Hello");
+}
+console.log(sayHello());
+
+// 関数型
+
+const anotherAdd: (n1: number, n2: number) => number = add;
+const doubleNumber: (num: number) => number = (num) => num * 2;
+
+// callback関数に型つけ
+
+function doubleAndHandle(num: number, cd: (num: number) => number): void {
+  const doubleNum = cd(num * 2);
+  console.log(doubleNum);
+}
+
+doubleAndHandle(21, (doubleNum) => doubleNum);
