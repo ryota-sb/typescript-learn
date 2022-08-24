@@ -55,5 +55,21 @@ function doubleAndHandle(num: number, cd: (num: number) => number): void {
   const doubleNum = cd(num * 2);
   console.log(doubleNum);
 }
-
 doubleAndHandle(21, (doubleNum) => doubleNum);
+
+// unknown型
+
+let unknownInput: unknown;
+let anyInput: any; // なんでも入る、何にでも代入できてしまう
+let text: string;
+
+if (typeof unknownInput === "string") {
+  text = unknownInput;
+}
+
+// never型 (戻り値がundefindすらない、何も返さない時に使用する型)
+
+function error(message: string): never {
+  throw new Error(message);
+}
+console.log(error("This is an error"));
