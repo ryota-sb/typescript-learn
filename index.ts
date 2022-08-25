@@ -241,6 +241,20 @@
 
 // const restParams = (...args: [number, string?, boolean?, ...number[]]) => {};
 
-// const assertion
+// const assertion (全て定数になり、readonly 読み込み専用になる)
 
-const array = [10, 20] as const;
+// const array = [10, 20] as const;
+
+// typeof 応用
+
+const user = {
+  name: "ryota",
+  age: 27,
+};
+
+type UserType = typeof user;
+
+const user2: UserType = {
+  name: "John",
+  age: 28,
+};
