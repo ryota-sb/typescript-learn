@@ -195,9 +195,24 @@
 
 // オーバーロードは、interfaceで定義する
 
-interface Tmp {
-  (x: string): number;
-  (x: number): number;
-}
+// interface Tmp {
+//   (x: string): number;
+//   (x: number): number;
+// }
 
-const tmp: Tmp = (x: string | number) => 0;
+// const tmp: Tmp = (x: string | number) => 0;
+
+// 上から順にoverloadされる
+
+// type FuncA = {
+//   (a: string, b: number): number;
+//   (a: number, b: string): number;
+// };
+
+// type FuncB = {
+//   (a: string): number;
+// };
+
+// let intersectionFunc: FuncA & FuncB;
+
+// intersectionFunc = (a: string | number, b?: number | string) => 0;
