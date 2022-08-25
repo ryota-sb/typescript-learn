@@ -219,20 +219,24 @@
 
 // union type の overload は、パラメータはintersection typeになり、戻り値は、union typeになる
 
-type FuncA = {
-  (a: number): number;
-};
+// type FuncA = {
+//   (a: number): number;
+// };
 
-type FuncB = {
-  (a: string): string;
-};
+// type FuncB = {
+//   (a: string): string;
+// };
 
-type unionFunc = FuncA | FuncB;
+// type unionFunc = FuncA | FuncB;
 
-const unionStringFunc: unionFunc = (x: string) => {
-  return "Hello World";
-};
+// const unionStringFunc: unionFunc = (x: string) => {
+//   return "Hello World";
+// };
 
-const unionNumberFunc: unionFunc = (x: number) => {
-  return 100;
-};
+// const unionNumberFunc: unionFunc = (x: number) => {
+//   return 100;
+// };
+
+// レストパラメータ
+
+const restParams = (...args: [number, string?, boolean?, ...number[]]) => {};
