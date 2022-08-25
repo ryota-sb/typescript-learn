@@ -239,4 +239,8 @@
 
 // レストパラメータ
 
-const restParams = (...args: [number, string?, boolean?, ...number[]]) => {};
+// const restParams = (...args: [number, string?, boolean?, ...number[]]) => {};
+
+// const assertion
+
+const array = [10, 20] as const;
