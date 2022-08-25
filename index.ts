@@ -157,38 +157,47 @@
 
 // optional chaining
 
-type DownloadedData = {
-  id: number;
-  user: {
-    name?: {
-      first: string;
-      last: string;
-    };
-  };
-};
+// type DownloadedData = {
+//   id: number;
+//   user: {
+//     name?: {
+//       first: string;
+//       last: string;
+//     };
+//   };
+// };
 
-const downloadData: DownloadedData = {
-  id: 1,
-  user: {},
-};
+// const downloadData: DownloadedData = {
+//   id: 1,
+//   user: {},
+// };
 
-console.log(downloadData.user?.name);
+// console.log(downloadData.user?.name);
 
 // nullish coalescing
 // ?? をつける記法
 // || or演算子との違いは、0や空文字もfalseを返す
 
-const userData = downloadData.user ?? "no user";
+// const userData = downloadData.user ?? "no user";
 
-// LoikUp type
+// // LoikUp type
 
-type id = DownloadedData["user"]["name"];
+// type id = DownloadedData["user"]["name"];
 
-enum Color {
-  RED,
-  BLUE,
+// enum Color {
+//   RED,
+//   BLUE,
+// }
+
+// let target = Color.RED;
+
+// console.log(target);
+
+// オーバーロードは、interfaceで定義する
+
+interface Tmp {
+  (x: string): number;
+  (x: number): number;
 }
 
-let target = Color.RED;
-
-console.log(target);
+const tmp: Tmp = (x: string | number) => 0;
