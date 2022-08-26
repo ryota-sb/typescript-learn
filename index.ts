@@ -247,14 +247,14 @@
 
 // typeof 応用
 
-const user = {
-  name: "ryota",
-  age: 27,
-};
+// const user = {
+//   name: "ryota",
+//   age: 27,
+// };
 
-type UserType = typeof user;
+// type UserType = typeof user;
 
-const user2: UserType = {
-  name: "John",
-  age: 28,
-};
+// const user2: UserType = {
+//   name: "John",
+//   age: 28,
+// };
