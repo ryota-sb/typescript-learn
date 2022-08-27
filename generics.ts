@@ -53,3 +53,53 @@ const tmpDatabase: TmpDatabase<number> = {
   id: 3,
   data: [],
 };
+
+// Utility type typescriptに内蔵されている便利な型のライブラリ（Partial Readonly）
+
+interface Todo {
+  title: string;
+  text: string;
+}
+
+// Partial<> を使用することでジェネリクスに渡した型がオプショナルで生成される
+
+type Todoable = Partial<Todo>;
+
+// Readonly<> を使用することでジェネリクスに渡した型が全てreadonlyで定義される
+
+type ReadTodo = Readonly<Todo>;
+
+const fetchData: Promise<string> = new Promise((resolve) => {
+  setTimeout(() => {
+    resolve("hello world");
+  }, 3000);
+});
+
+fetchData.then((item) => {
+  item.toUpperCase;
+});
+
+const vegetables: Array<string> = ["Tomato", "Broccoli", "Aspargaus"];
+
+// デフォルトの型パラメータの定義
+
+interface ResponseData<T = any> {
+  data: T;
+  status: number;
+}
+
+let tmp: ResponseData;
+
+// mapped type
+
+type UserName = {
+  name: string;
+};
+
+type MappedTypes<T> = {
+  [P in keyof T]: P;
+};
+
+const username: MappedTypes<UserName> = {
+  name: "name",
+};
