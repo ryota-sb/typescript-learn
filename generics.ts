@@ -103,3 +103,7 @@ type MappedTypes<T> = {
 const username: MappedTypes<UserName> = {
   name: "name",
 };
+
+// Conditional type (if文のようなもの)
+
+type ConditionalTypes = "tomato" extends string ? number : boolean;
